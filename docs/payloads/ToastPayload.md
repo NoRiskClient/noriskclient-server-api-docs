@@ -62,6 +62,44 @@ Payloads.send(player.uniqueId, errorToast) { uuid, data ->
 }
 ```
 
+## Practical Applications
+
+### Shop Purchase Notification
+```kotlin
+fun notifyPurchase(player: Player, itemName: String, price: Int) {
+    val purchaseToast = api.createToastPayload(
+        progressBar = false,
+        header = "Purchase Successful!",
+        content = "$itemName bought for $price coins",
+        playerHead = true,
+        playerUUID = player.uniqueId,
+        toastType = ToastType.SUCCESS
+    )
+    
+    Payloads.send(player.uniqueId, purchaseToast) { uuid, data ->
+        player.sendPluginMessage(this, NRC_CHANNEL, data)
+    }
+}
+```
+
+### Level Up Notification
+```kotlin
+fun notifyLevelUp(player: Player, newLevel: Int, experienceGained: Int) {
+    val levelUpToast = api.createToastPayload(
+        progressBar = true,
+        header = "Level Up!",
+        content = "You reached level $newLevel (+$experienceGained XP)",
+        playerHead = true,
+        playerUUID = player.uniqueId,
+        toastType = ToastType.SUCCESS
+    )
+    
+    Payloads.send(player.uniqueId, levelUpToast) { uuid, data ->
+        player.sendPluginMessage(this, NRC_CHANNEL, data)
+    }
+}
+```
+
 ## ToastType Enum
 
 - `INFO` - Normal information notification (blue)

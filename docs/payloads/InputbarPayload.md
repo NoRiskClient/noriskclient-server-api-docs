@@ -54,6 +54,56 @@ api.requestInput(player.uniqueId, inputPayload,
 ```
 
 
+## Practical Applications
+
+### Bank Transaction Input
+```kotlin
+fun requestBankTransaction(player: Player) {
+    val bankInput = api.createInputbarPayload(
+        input = "Bank Transfer",
+        placeholder = "Enter amount to transfer...",
+        maxLength = 15
+    )
+    
+    api.requestInput(player.uniqueId, bankInput,
+        { uuid, data -> player.sendPluginMessage(this, NRC_CHANNEL, data) },
+        { response ->
+            val amount = response.toDoubleOrNull()
+            if (amount != null && amount > 0) {
+                processBankTransfer(player, amount)
+            } else {
+                player.sendMessage("§cInvalid amount!")
+            }
+        },
+        { player.sendMessage("§7Transaction cancelled.") }
+    )
+}
+```
+
+### Clan Name Creation
+```kotlin
+fun createClanName(player: Player) {
+    val clanInput = api.createInputbarPayload(
+        input = "Create Clan",
+        placeholder = "Enter clan name...",
+        maxLength = 20
+    )
+    
+    api.requestInput(player.uniqueId, clanInput,
+        { uuid, data -> player.sendPluginMessage(this, NRC_CHANNEL, data) },
+        { response ->
+            if (response.isNotBlank() && isValidClanName(response)) {
+                createClan(player, response)
+                player.sendMessage("§aClan '$response' created!")
+            } else {
+                player.sendMessage("§cInvalid clan name!")
+            }
+        },
+        { player.sendMessage("§7Clan creation cancelled.") }
+    )
+}
+```
+
 ## Notes
 - Input is automatically canceled after a certain time
 - Players can cancel input with ESC

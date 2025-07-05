@@ -39,6 +39,37 @@ val vanillaUsers = NRCPlayer.listAllNoNRC().size
 println("NRC Users: $nrcUsers / $totalPlayers")
 ```
 
+## Practical Applications
+
+### NRC-Only Features Gate
+```kotlin
+fun giveSpecialReward(player: Player) {
+    if (NRCPlayer.user(player.uniqueId)) {
+        // Give enhanced reward for NRC users
+        giveEnhancedReward(player)
+        player.sendMessage("§aNRC user bonus applied!")
+    } else {
+        // Give standard reward
+        giveStandardReward(player)
+        player.sendMessage("§7Consider using NoRisk Client for bonuses!")
+    }
+}
+```
+
+### Server Statistics Display
+```kotlin
+fun displayServerStats(player: Player) {
+    val totalPlayers = Bukkit.getOnlinePlayers().size
+    val nrcUsers = NRCPlayer.listAll().size
+    val percentage = if (totalPlayers > 0) (nrcUsers * 100) / totalPlayers else 0
+    
+    player.sendMessage("§6=== Server Statistics ===")
+    player.sendMessage("§7Total Players: §f$totalPlayers")
+    player.sendMessage("§7NRC Users: §a$nrcUsers §7(${percentage}%)")
+    player.sendMessage("§7Vanilla Users: §c${totalPlayers - nrcUsers}")
+}
+```
+
 ## Notes
 - Players need time to complete handshake after joining
 - Only works with NoRisk Client users

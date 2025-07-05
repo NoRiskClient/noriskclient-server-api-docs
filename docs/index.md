@@ -4,7 +4,7 @@
 
 ##  Overview
 
-The NoRisk Client Server API enables server developers to create rich, interactive experiences for players using the NoRisk Client and to have more control over the API.
+The NoRisk Client Server API enables server developers to create rich, interactive experiences for players using the NoRisk Client and to have more control over the API. 
 
 ---
 
@@ -50,6 +50,17 @@ Add the dependency to your build configuration:
 
 ---
 
+## Setup
+
+You need to make a instance of the API:
+
+```kt
+val api = NoRiskServerApi()
+```
+
+after that you can use it with api.PayloadName
+
+
 ##  Available Payloads
 
 ### [Toast Notifications](payloads/ToastPayload.md)
@@ -72,5 +83,5 @@ Customize gamemode display in the client.
 
 ## Utils
 
-### [Check if player is NRC player(utils/NRCPlayer.md)
+### [Check if player is NRC player](utils/NRCPlayer.md)
 Check if a player uses the NRC

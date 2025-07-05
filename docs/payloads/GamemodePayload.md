@@ -47,6 +47,36 @@ fun startEvent(players: List<Player>, eventName: String) {
 }
 ```
 
+## Practical Applications
+
+### Minigame Gamemode Updates
+```kotlin
+fun updateMinigameMode(players: List<Player>, gameType: String, gamePhase: String) {
+    val gamemodeDisplay = api.createGamemodePayload(
+        gamemode = "$gameType - $gamePhase"
+    )
+    
+    players.forEach { player ->
+        Payloads.send(player.uniqueId, gamemodeDisplay) { uuid, data ->
+            player.sendPluginMessage(this, NRC_CHANNEL, data)
+        }
+    }
+}
+```
+
+### Rank-based Gamemode Display
+```kotlin
+fun updateRankGamemode(player: Player, rank: String) {
+    val rankGamemode = api.createGamemodePayload(
+        gamemode = "VIP - $rank"
+    )
+    
+    Payloads.send(player.uniqueId, rankGamemode) { uuid, data ->
+        player.sendPluginMessage(this, NRC_CHANNEL, data)
+    }
+}
+```
+
 ## Notes
 - The gamemode display is only overridden in the NoRisk Client
 - Standard Minecraft clients will still see normal gamemode names

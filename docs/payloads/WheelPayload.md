@@ -40,7 +40,41 @@ wheelEntries.forEach { entry ->
 }
 ```
 
+## Practical Applications
 
+### Admin Tools Wheel
+```kotlin
+fun setupAdminWheel(player: Player) {
+    if (player.hasPermission("admin.tools")) {
+        val adminEntries = listOf(
+            api.createWheelPayload("Teleport", "/tp ${player.name}"),
+            api.createWheelPayload("Godmode", "/god ${player.name}")
+        )
+        
+        adminEntries.forEach { entry ->
+            Payloads.send(player.uniqueId, entry) { uuid, data ->
+                player.sendPluginMessage(this, NRC_CHANNEL, data)
+            }
+        }
+    }
+}
+```
+
+### Player Quick Actions
+```kotlin
+fun setupPlayerWheel(player: Player) {
+    val playerEntries = listOf(
+        api.createWheelPayload("Daily Reward", "/daily"),
+        api.createWheelPayload("Player Stats", "/stats")
+    )
+    
+    playerEntries.forEach { entry ->
+        Payloads.send(player.uniqueId, entry) { uuid, data ->
+            player.sendPluginMessage(this, NRC_CHANNEL, data)
+        }
+    }
+}
+```
 
 ## Notes
 - Commands are sent as chat messages

@@ -57,6 +57,44 @@ Payloads.send(player.uniqueId, pvpModules) { uuid, data ->
 ```
 
 
+## Practical Applications
+
+### PvP Arena Module Restrictions
+```kotlin
+fun enterPvpArena(player: Player) {
+    val pvpRestrictions = api.createModuleDeactivatePayload(
+        modules = listOf(
+            Modules.ZoomModule,
+            Modules.FreeLookModule
+        )
+    )
+    
+    Payloads.send(player.uniqueId, pvpRestrictions) { uuid, data ->
+        player.sendPluginMessage(this, NRC_CHANNEL, data)
+    }
+    
+    player.sendMessage("§ePvP restrictions applied!")
+}
+```
+
+### Build Competition Restrictions
+```kotlin
+fun joinBuildCompetition(player: Player) {
+    val buildRestrictions = api.createModuleDeactivatePayload(
+        modules = listOf(
+            Modules.FullBrightModule,
+            Modules.NoFogModule
+        )
+    )
+    
+    Payloads.send(player.uniqueId, buildRestrictions) { uuid, data ->
+        player.sendPluginMessage(this, NRC_CHANNEL, data)
+    }
+    
+    player.sendMessage("§aBuild competition mode enabled!")
+}
+```
+
 ## Notes
 - Modules are only deactivated for the duration of the session
 - Players can reactivate modules after a restart
