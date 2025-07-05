@@ -27,14 +27,14 @@ Add the dependency to your build configuration:
 === "Gradle (Kotlin DSL)"
     ```kotlin
     dependencies {
-        implementation("gg.norisk:noriskclient-server-api:0.1.0")
+        implementation("gg.norisk:noriskclient-server-api-[server-software]:0.1.0")
     }
     ```
 
 === "Gradle (Groovy)"
     ```groovy
     dependencies {
-        implementation 'gg.norisk:noriskclient-server-api:0.1.0'
+        implementation 'gg.norisk:noriskclient-server-api-[server-software]:0.1.0'
     }
     ```
 
@@ -42,8 +42,9 @@ Add the dependency to your build configuration:
     ```xml
     <dependency>
         <groupId>gg.norisk</groupId>
-        <artifactId>noriskclient-server-api</artifactId>
+        <artifactId>noriskclient-server-api-[server-software]</artifactId>
         <version>0.1.0</version>
+        <scope>provided</scope>
     </dependency>
     ```
 
@@ -69,3 +70,7 @@ Create colored beacon beams at specific coordinates.
 ### [Gamemode Override](payloads/GamemodePayload.md)
 Customize gamemode display in the client.
 
+## Utils
+
+### [Check if player is NRC player(utils/NRCPlayer.md)
+Check if a player uses the NRC

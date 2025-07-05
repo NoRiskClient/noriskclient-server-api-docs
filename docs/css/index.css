@@ -1,29 +1,28 @@
-
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
     width: 48px;
     height: 48px;
 }
 
-.md-header {
+[data-md-color-scheme="slate"] .md-header {
     background-color: #0d1117 !important;
     border-bottom: 1px solid #1a237e;
 }
 
-.md-tabs {
+[data-md-color-scheme="slate"] .md-tabs {
     background-color: #161b22 !important;
     border-bottom: 1px solid #1a237e;
 }
 
-.md-nav--primary .md-nav__title {
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__title {
     background-color: #0d1117 !important;
 }
 
-.md-typeset a {
+[data-md-color-scheme="slate"] .md-typeset a {
     color: #1976d2 !important;
 }
 
-.md-nav__item--active > .md-nav__link {
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
     color: #1976d2 !important;
 }
 
@@ -36,45 +35,145 @@
     --md-code-fg-color: #c9d1d9;
 }
 
-.md-typeset pre {
+[data-md-color-scheme="slate"] .md-typeset pre {
     background-color: #161b22 !important;
     border: 1px solid #1a237e;
     border-radius: 6px;
 }
 
-.md-typeset code {
+[data-md-color-scheme="slate"] .md-typeset code {
     background-color: #161b22 !important;
     color: #c9d1d9 !important;
     border: 1px solid #1a237e;
 }
 
-.md-typeset table:not([class]) {
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
     border: 1px solid #1a237e;
 }
 
-.md-typeset table:not([class]) th {
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
     background-color: #1a237e !important;
     color: #ffffff !important;
 }
 
-.md-typeset table:not([class]) td {
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
     border-top: 1px solid #1a237e;
 }
 
-.md-nav__item--active > .md-nav__link:hover {
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link:hover {
     color: #2196f3 !important;
 }
 
-.md-nav__link:hover {
+[data-md-color-scheme="slate"] .md-nav__link:hover {
     color: #1976d2 !important;
 }
 
-.md-search__input {
+[data-md-color-scheme="slate"] .md-search__input {
     background-color: #161b22 !important;
     border: 1px solid #1a237e !important;
     color: #c9d1d9 !important;
 }
 
-.md-search__input:focus {
+[data-md-color-scheme="slate"] .md-search__input:focus {
     border-color: #1976d2 !important;
+}
+
+/* Enhanced Light mode styles */
+[data-md-color-scheme="default"] .md-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e1e4e8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+    background-color: #f6f8fa !important;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+[data-md-color-scheme="default"] .md-nav--primary .md-nav__title {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+[data-md-color-scheme="default"] .md-typeset a {
+    color: #0366d6 !important;
+}
+
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link {
+    color: #0366d6 !important;
+    font-weight: 600;
+}
+
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #3f51b5;
+    --md-accent-fg-color: #0366d6;
+    --md-default-bg-color: #ffffff;
+    --md-default-fg-color: #24292e;
+    --md-code-bg-color: #f6f8fa;
+    --md-code-fg-color: #24292e;
+}
+
+[data-md-color-scheme="default"] .md-typeset pre {
+    background-color: #f6f8fa !important;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+}
+
+[data-md-color-scheme="default"] .md-typeset code {
+    background-color: #f6f8fa !important;
+    color: #24292e !important;
+    border: 1px solid #e1e4e8;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) {
+    border: 1px solid #e1e4e8;
+    border-collapse: collapse;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+    background-color: #f6f8fa !important;
+    color: #24292e !important;
+    border-bottom: 2px solid #e1e4e8;
+    font-weight: 600;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) td {
+    border-top: 1px solid #e1e4e8;
+}
+
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link:hover {
+    color: #0366d6 !important;
+    background-color: #f1f8ff;
+}
+
+[data-md-color-scheme="default"] .md-nav__link:hover {
+    color: #0366d6 !important;
+    background-color: #f6f8fa;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+    background-color: #ffffff !important;
+    border: 1px solid #e1e4e8 !important;
+    color: #24292e !important;
+}
+
+[data-md-color-scheme="default"] .md-search__input:focus {
+    border-color: #0366d6 !important;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+    font-weight: 600;
+}
+
+.md-typeset .admonition {
+    border-radius: 6px;
+}
+
+.md-typeset blockquote {
+    border-left: 4px solid var(--md-accent-fg-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
 }
