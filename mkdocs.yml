@@ -39,6 +39,7 @@ nav:
     - Beacon Beams: payloads/BeaconBeamPayload.md
   - Utils: 
     - Check if Player plays NRC: utils/NRCPlayer.md
+    - Import NRC_CHANNEL for use: utils/ImportChannel.md
 
 extra:
   generator: false
@@ -53,7 +54,7 @@ extra:
       link: https://github.com/NoRiskClient
       name: GitHub
 
-copyright: Made with ❤️ by the NoRiskClient Team
+copyright: Made with ❤️ by the NoRisk Client Team
 
 extra_css:
   - css/index.css
