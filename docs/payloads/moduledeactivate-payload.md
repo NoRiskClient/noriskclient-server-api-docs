@@ -42,10 +42,8 @@ enum class Modules {
       <pre><code class="language-java">nrcPlayer.sendModuleDeactivate(Arrays.asList(Modules.ZoomModule, Modules.FreeLookModule, Modules.FullBrightModule));</code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin">
-nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule))</code></pre>
-      <pre><code class="language-kotlin">
-nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule, Modules.FreeLookModule, Modules.FullBrightModule))</code></pre>
+      <pre><code class="language-kotlin">nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule))</code></pre>
+      <pre><code class="language-kotlin">nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule, Modules.FreeLookModule, Modules.FullBrightModule))</code></pre>
     </div>
   </div>
 </div>

@@ -25,10 +25,8 @@ The Inputbar Payload displays input prompts in the NoRisk Client. Players can en
       <pre><code class="language-java">nrcPlayer.sendInputbar("Enter Amount", "Number of coins...", 10);</code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin">
-nrcPlayer.sendInputbar("Enter Name", "Your name...", 50)</code></pre>
-      <pre><code class="language-kotlin">
-nrcPlayer.sendInputbar("Enter Amount", "Number of coins...", 10)</code></pre>
+      <pre><code class="language-kotlin">nrcPlayer.sendInputbar("Enter Name", "Your name...", 50)</code></pre>
+      <pre><code class="language-kotlin">nrcPlayer.sendInputbar("Enter Amount", "Number of coins...", 10)</code></pre>
     </div>
   </div>
 </div>

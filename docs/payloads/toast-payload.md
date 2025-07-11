@@ -62,8 +62,7 @@ nrcPlayer.sendToast(
         toastType = ToastType.INFO
 )
 </code></pre>
-      <pre><code class="language-kotlin">
-nrcPlayer.sendToast(
+      <pre><code class="language-kotlin">nrcPlayer.sendToast(
         progressBar = false,
         header = "Mission Complete!",
         content = "You received 100 coins!",
@@ -72,8 +71,7 @@ nrcPlayer.sendToast(
         toastType = ToastType.SUCCESS
 )
 </code></pre>
-      <pre><code class="language-kotlin"> 
-nrcPlayer.sendToast(
+      <pre><code class="language-kotlin"> nrcPlayer.sendToast(
         progressBar = true,
         header = "Error!",
         content = "Insufficient permissions!",

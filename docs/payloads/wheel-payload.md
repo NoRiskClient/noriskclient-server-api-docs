@@ -29,8 +29,7 @@ nrcPlayer.sendWheel("Bank", "/bank");</code></pre>
     <div class="code-tab-panel" data-tab="kotlin">
       <pre><code class="language-kotlin">
 nrcPlayer.sendWheel("Spawn", "/spawn")</code></pre>
-      <pre><code class="language-kotlin">
-nrcPlayer.sendWheel("Home", "/home")
+      <pre><code class="language-kotlin">nrcPlayer.sendWheel("Home", "/home")
 nrcPlayer.sendWheel("Shop", "/warp shop")
 nrcPlayer.sendWheel("PvP", "/warp pvp")
 nrcPlayer.sendWheel("Bank", "/bank")
