@@ -31,15 +31,15 @@ theme:
 nav:
   - Home: index.md
   - Payloads:
-    - Toast Notifications: payloads/ToastPayload.md
-    - Gamemode Override: payloads/GamemodePayload.md
-    - Module Deactivation: payloads/ModuleDeactivatePayload.md
-    - Action Wheel: payloads/WheelPayload.md
-    - Input Prompts: payloads/InputbarPayload.md
-    - Beacon Beams: payloads/BeaconBeamPayload.md
-  - Utils: 
-    - Check if Player plays NRC: utils/NRCPlayer.md
-    - Import NRC_CHANNEL for use: utils/ImportChannel.md
+    - Toast Notifications: payloads/toast-payload.md
+    - Gamemode Override: payloads/gamemode-payload.md
+    - Module Deactivation: payloads/moduledeactivate-payload.md
+    - Action Wheel: payloads/wheel-payload.md
+    - Input Prompts: payloads/inputbar-payload.md
+    - Beacon Beams: payloads/beaconbeam-payload.md
+
+extra_javascript:
+  - js/tabs.js
 
 extra:
   generator: false

@@ -95,3 +95,35 @@
     color: #000000 !important;
 }
 
+.code-tab-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.code-tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #1a237e;
+  margin-bottom: -1px;
+}
+
+.code-tab-button {
+  background-color: transparent;
+  border: none;
+  color: #c9d1d9;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.code-tab-button.active {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+}
+
+.code-tab-panel {
+  display: none;
+}
+
+.code-tab-panel.active {
+  display: block;
+}
