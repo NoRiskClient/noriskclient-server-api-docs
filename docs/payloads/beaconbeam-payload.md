@@ -41,11 +41,11 @@ nrcPlayer.sendBeaconBeam(new XYZ(-50.0, 100.0, 75.0), Dimension.NETHER, new RGBC
 nrcPlayer.sendBeaconBeam(new XYZ(0.0, 60.0, 0.0), Dimension.END, new RGBColor(0, 100, 255));</code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendBeaconBeam(XYZ(100.0, 64.0, 200.0), Dimension.OVERWORLD, RGBColor(255, 0, 0))</code></pre>
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendBeaconBeam(XYZ(-50.0, 100.0, 75.0), Dimension.NETHER, RGBColor(0, 255, 0))</code></pre>
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendBeaconBeam(XYZ(0.0, 60.0, 0.0), Dimension.END, RGBColor(0, 100, 255))</code></pre>
     </div>
   </div>

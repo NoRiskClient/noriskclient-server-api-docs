@@ -12,19 +12,19 @@ The Module Deactivate Payload disables specific NoRisk Client modules for indivi
 ## Available Modules
 ```kotlin
 enum class Modules {
-    FovChanger,         
-    FullBrightModule,   
-    ZoomModule,         
-    FreeLookModule,     
-    NoFogModule,        
-    ArrowTrail,         
-    PackTweaks,         
-    ItemModel,          
-    AutoText,           
-    ItemHighlighter,    
-    TntTimer,           
-    WeatherChanger,     
-    TimeChanger         
+    FOV_CHANGER("FovChanger"),
+    FULL_BRIGHT_MODULE("FullBrightModule"),
+    ZOOM_MODULE("ZoomModule"),
+    FREE_LOOK_MODULE("FreeLookModule"),
+    NO_FOG_MODULE("NoFogModule"),
+    ARROW_TRAIL("ArrowTrail"),
+    PACK_TWEAKS("PackTweaks"),
+    ITEM_MODEL("ItemModel"),
+    AUTO_TEXT("AutoText"),
+    ITEM_HIGHLIGHTER("ItemHighlighter"),
+    TNT_TIMER("TntTimer"),
+    WEATHER_CHANGER("WeatherChanger"),
+    TIME_CHANGER("TimeChanger");
 }
 ```
 
@@ -42,9 +42,9 @@ enum class Modules {
       <pre><code class="language-java">nrcPlayer.sendModuleDeactivate(Arrays.asList(Modules.ZoomModule, Modules.FreeLookModule, Modules.FullBrightModule));</code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule))</code></pre>
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendModuleDeactivate(listOf(Modules.ZoomModule, Modules.FreeLookModule, Modules.FullBrightModule))</code></pre>
     </div>
   </div>

@@ -23,9 +23,9 @@ The Gamemode Payload overrides the gamemode display in the NoRisk Client. This a
       <pre><code class="language-java">nrcPlayer.sendGamemode("BedWars");</code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendGamemode("Skyblock")</code></pre>
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendGamemode("BedWars")</code></pre>
     </div>
   </div>

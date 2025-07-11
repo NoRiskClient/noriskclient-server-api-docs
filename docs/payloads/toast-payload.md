@@ -53,7 +53,7 @@ The Toast Payload displays notifications in the NoRisk Client. These appear as s
 </code></pre>
     </div>
     <div class="code-tab-panel" data-tab="kotlin">
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendToast(
         progressBar = false,
         header = "Welcome!",
@@ -62,7 +62,7 @@ nrcPlayer.sendToast(
         toastType = ToastType.INFO
 )
 </code></pre>
-      <pre><code class="language-kotlin"> 
+      <pre><code class="language-kotlin">
 nrcPlayer.sendToast(
         progressBar = false,
         header = "Mission Complete!",
