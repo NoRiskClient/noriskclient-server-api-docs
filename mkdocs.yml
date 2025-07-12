@@ -29,7 +29,9 @@ theme:
     - content.code.select
 
 nav:
-  - Home: index.md
+  - Home: 
+    - index.md
+    - Getting Started: getting-started.md
   - Payloads:
     - Toast Notifications: payloads/toast-payload.md
     - Gamemode Override: payloads/gamemode-payload.md

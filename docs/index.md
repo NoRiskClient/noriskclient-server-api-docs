@@ -75,53 +75,6 @@ dependencies {
 
 ---
 
-## Setup
-
-<div class="code-tab-wrapper">
-  <div class="code-tab-buttons">
-    <button class="code-tab-button active" data-tab="java-setup">Java</button>
-    <button class="code-tab-button" data-tab="kotlin-setup">Kotlin</button>
-  </div>
-
-  <div class="code-tab-content">
-    <div class="code-tab-panel active" data-tab="java-setup">
-      To get an instance of the API, you can use the following:
-      <pre><code class="language-java">// In your main plugin class or where you initialize your API
-CoreAPI coreAPI = new CoreAPI();
-ServerAPI serverAPI = gg.norisk.paper.Paper.getApi();
-coreAPI.setServerAPI(serverAPI);</code></pre>
-
-      Once you have the `CoreAPI` instance, you can retrieve an `NrcPlayer` object for a specific player (e.g., when a player joins):
-      <pre><code class="language-java">// Assuming 'coreAPI' is your initialized CoreAPI instance and 'uuid' is the player's UUID
-NrcPlayer nrcPlayer = coreAPI.getPlayerManager().getNrcPlayer(uuid);
-if (nrcPlayer == null) {
-    // Player is not using NoRisk Client or has not completed handshake yet
-    return;
-}
-// Now you can use nrcPlayer to send payloads
-nrcPlayer.sendToast(...);</code></pre>
-    </div>
-    <div class="code-tab-panel" data-tab="kotlin-setup">
-      To get an instance of the API, you can use the following:
-      <pre><code class="language-kotlin">// In your main plugin class or where you initialize your API
-val coreAPI = CoreAPI()
-val serverAPI = gg.norisk.paper.Paper.getApi()
-coreAPI.setServerAPI(serverAPI)</code></pre>
-
-      Once you have the `CoreAPI` instance, you can retrieve an `NrcPlayer` object for a specific player (e.g., when a player joins):
-      <pre><code class="language-kotlin">// Assuming 'coreAPI' is your initialized CoreAPI instance and 'uuid' is the player's UUID
-val nrcPlayer = coreAPI.playerManager.getNrcPlayer(uuid)
-if (nrcPlayer == null) {
-    // Player is not using NoRisk Client or has not completed handshake yet
-    return
-}
-// Now you can use nrcPlayer to send payloads
-nrcPlayer.sendToast(...)</code></pre>
-    </div>
-  </div>
-</div>
-
-
 
 ##  Available Payloads
 
