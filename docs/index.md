@@ -29,49 +29,112 @@ To use the NoRiskClient API, you need to add it as a dependency to your project.
 
 ## Dependency Information
 
+Add the following dependency to your project, replacing `VERSION` with the latest release (e.g., `0.1.0`).  
+Choose the correct artifact for your platform: `core`, `paper`, `velocity`, `spigot`, `bungeecord`, or `fabric`.
+
 <div class="code-tab-wrapper">
   <div class="code-tab-buttons">
     <button class="code-tab-button active" data-tab="maven">Maven</button>
     <button class="code-tab-button" data-tab="gradle-groovy">Gradle (Groovy)</button>
     <button class="code-tab-button" data-tab="gradle-kts">Gradle (KTS)</button>
   </div>
-
   <div class="code-tab-content">
     <div class="code-tab-panel active" data-tab="maven">
-      <pre><code class="language-xml">&lt;repository&gt;
+      <pre><code class="language-xml">
+&lt;repository&gt;
     &lt;id&gt;norisk&lt;/id&gt;
-    &lt;url&gt;https://repo.norisk.gg/repository/maven-public/&lt;/url&gt;
+    &lt;url&gt;https://maven.norisk.gg/repository/maven-public/&lt;/url&gt;
 &lt;/repository&gt;
-
+&lt;!-- Core (platform-agnostic) --&gt;
 &lt;dependency&gt;
-    &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
-    &lt;artifactId&gt;norisk-client-server-api&lt;/artifactId&gt;
-    &lt;version&gt;LATEST&lt;/version&gt;
-    &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-core&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- Paper --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-paper&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- Velocity --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-velocity&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- Spigot --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-spigot&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- BungeeCord --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-bungeecord&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- Fabric --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;gg.norisk&lt;/groupId&gt;
+  &lt;artifactId&gt;nrc-server-api-fabric&lt;/artifactId&gt;
+  &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+      </code></pre>
     </div>
     <div class="code-tab-panel" data-tab="gradle-groovy">
-      <pre><code class="language-groovy">repositories {
+      <pre><code class="language-groovy">
+repositories {
     maven {
         url = uri("https://repo.norisk.gg/repository/maven-public/")
     }
 }
-
 dependencies {
-    compileOnly("gg.norisk:norisk-client-server-api:LATEST")
-}</code></pre>
+    // Core (platform-agnostic)
+    implementation "gg.norisk:nrc-server-api-core:VERSION"
+    // Paper
+    implementation "gg.norisk:nrc-server-api-paper:VERSION"
+    // Velocity
+    implementation "gg.norisk:nrc-server-api-velocity:VERSION"
+    // Spigot
+    implementation "gg.norisk:nrc-server-api-spigot:VERSION"
+    // BungeeCord
+    implementation "gg.norisk:nrc-server-api-bungeecord:VERSION"
+    // Fabric
+    implementation "gg.norisk:nrc-server-api-fabric:VERSION"
+}
+      </code></pre>
     </div>
     <div class="code-tab-panel" data-tab="gradle-kts">
-      <pre><code class="language-kotlin">repositories {
+      <pre><code class="language-kotlin">
+repositories {
     maven("https://repo.norisk.gg/repository/maven-public/")
 }
-
 dependencies {
-    compileOnly("gg.norisk:norisk-client-server-api:LATEST")
-}</code></pre>
+    // Core (platform-agnostic)
+    implementation("gg.norisk:nrc-server-api-core:VERSION")
+    // Paper
+    implementation("gg.norisk:nrc-server-api-paper:VERSION")
+    // Velocity
+    implementation("gg.norisk:nrc-server-api-velocity:VERSION")
+    // Spigot
+    implementation("gg.norisk:nrc-server-api-spigot:VERSION")
+    // BungeeCord
+    implementation("gg.norisk:nrc-server-api-bungeecord:VERSION")
+    // Fabric
+    implementation("gg.norisk:nrc-server-api-fabric:VERSION")
+}
+      </code></pre>
     </div>
   </div>
 </div>
+
+> **Note:** Replace `VERSION` with the latest release, e.g. `0.1.0`.
+
+> **Find the latest version:**  
+> Browse available versions of `nrc-server-api-core` here:  
+> [https://maven.norisk.gg/service/rest/repository/browse/maven-releases/gg/norisk/nrc-server-api-core/](https://maven.norisk.gg/service/rest/repository/browse/maven-releases/gg/norisk/nrc-server-api-core/)
 
 ---
 
