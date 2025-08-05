@@ -1,4 +1,10 @@
+---
+icon: material/alert-circle-outline
+---
 # Beacon Beam Payload Documentation
+
+!!! warning "Not Available"
+    This feature is currently not available.
 
 ## Overview
 The Beacon Beam Payload displays colored light beams at specific coordinates in the NoRisk Client. These are visible to all players and can be used to mark important locations.
