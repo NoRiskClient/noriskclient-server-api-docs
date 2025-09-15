@@ -3,7 +3,7 @@
 This guide will help you set up the NoRisk Client Server API in your plugin for different server platforms.
 
 !!! warning "Important"
-    Do not shade the NoRiskClient API into your plugin JAR. The API should be loaded as a separate plugin.
+    Do not shade the nrc API into your plugin JAR. The API should be loaded as a separate plugin.
 
 ---
 
@@ -11,7 +11,7 @@ This guide will help you set up the NoRisk Client Server API in your plugin for 
 
 ### 1. Server Setup
 
-First, download and install the appropriate NoRiskClient-Server-API plugin for your server platform:
+First, download and install the appropriate nrc-Server-API plugin for your server platform:
 
 | Platform | Plugin Name |
 |----------|-------------|
@@ -66,7 +66,7 @@ public class YourPlugin extends JavaPlugin {
     public void onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            getLogger().severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.");
+            getLogger().severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -115,7 +115,7 @@ class YourPlugin : JavaPlugin() {
     override fun onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            logger.severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.")
+            logger.severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.")
             server.pluginManager.disablePlugin(this)
             return
         }
@@ -177,7 +177,7 @@ public class YourPlugin extends JavaPlugin {
     public void onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            getLogger().severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.");
+            getLogger().severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -220,7 +220,7 @@ class YourPlugin : JavaPlugin() {
     override fun onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            logger.severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.")
+            logger.severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.")
             server.pluginManager.disablePlugin(this)
             return
         }
@@ -276,7 +276,7 @@ public class YourPlugin extends Plugin {
     public void onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            getLogger().severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.");
+            getLogger().severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.");
             return;
         }
         
@@ -317,7 +317,7 @@ class YourPlugin : Plugin() {
     override fun onEnable() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            logger.severe("NoRiskClient-Server-API is not loaded! Make sure it's in your plugins folder.")
+            logger.severe("nrc-Server-API is not loaded! Make sure it's in your plugins folder.")
             return
         }
         
@@ -369,7 +369,7 @@ import com.velocitypowered.api.plugin.Plugin;
     name = "Your Plugin",
     version = "1.0.0",
     dependencies = {
-        @Dependency(id = "noriskclient-server-api")
+        @Dependency(id = "nrc-server-api")
     }
 )
 public class YourPlugin {
@@ -381,7 +381,7 @@ public class YourPlugin {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            System.err.println("NoRiskClient-Server-API is not loaded!");
+            System.err.println("nrc-Server-API is not loaded!");
             return;
         }
         
@@ -422,7 +422,7 @@ import com.velocitypowered.api.plugin.Dependency
     name = "Your Plugin",
     version = "1.0.0",
     dependencies = [
-        Dependency(id = "noriskclient-server-api")
+        Dependency(id = "nrc-server-api")
     ]
 )
 class YourPlugin {
@@ -434,7 +434,7 @@ class YourPlugin {
     fun onProxyInitialization(event: ProxyInitializeEvent) {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            System.err.println("NoRiskClient-Server-API is not loaded!")
+            System.err.println("nrc-Server-API is not loaded!")
             return
         }
         
@@ -488,7 +488,7 @@ public class YourMod implements ModInitializer {
     public void onInitialize() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            System.err.println("NoRiskClient-Server-API is not loaded!");
+            System.err.println("Nrc-Server-API is not loaded!");
             return;
         }
         
@@ -529,7 +529,7 @@ class YourMod : ModInitializer {
     override fun onInitialize() {
         // Check if NoRisk API is available
         if (!ServerAPI.isAvailable()) {
-            System.err.println("NoRiskClient-Server-API is not loaded!")
+            System.err.println("Nrc-Server-API is not loaded!")
             return
         }
         
@@ -580,7 +580,8 @@ name: YourPlugin
 version: 1.0.0
 main: com.yourpackage.YourPlugin
 depend: [NoRiskClient-Server-API]
-api-version: 1.20
+api-version: 1.21
+load: POSTWORLD
 ```
 
 ### BungeeCord
@@ -602,7 +603,29 @@ depend: [NoRiskClient-Server-API]
       "id": "noriskclient-server-api",
       "optional": false
     }
-  ]
+  ],
+  "load": "AFTER"
+}
+```
+
+### Fabric
+```json
+{
+  "schemaVersion": 1,
+  "id": "your-mod",
+  "version": "1.0.0",
+  "name": "Your Mod",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yourpackage.YourMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": ">=1.21.0",
+    "nrc-server-api-fabric": "*"
+  }
 }
 ```
     </div>
@@ -616,8 +639,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
-    compileOnly("gg.norisk:noriskclient-server-api-paper:1.0.0")
+    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+    compileOnly("gg.norisk:nrc-server-api-paper:1.0.0")
 }
 ```
 
@@ -630,7 +653,7 @@ repositories {
 
 dependencies {
     compileOnly("net.md-5:bungeecord-api:1.20-R0.1-SNAPSHOT")
-    compileOnly("gg.norisk:noriskclient-server-api-bungeecord:1.0.0")
+    compileOnly("gg.norisk:nrc-server-api-bungeecord:1.0.0")
 }
 ```
 
@@ -643,7 +666,7 @@ repositories {
 
 dependencies {
     compileOnly("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
-    compileOnly("gg.norisk:noriskclient-server-api-velocity:1.0.0")
+    compileOnly("gg.norisk:nrc-server-api-velocity:1.0.0")
 }
 ```
 
@@ -656,7 +679,7 @@ repositories {
 
 dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.83.1+1.20.1")
-    modImplementation("gg.norisk:noriskclient-server-api-fabric:1.0.0")
+    modImplementation("gg.norisk:nrc-server-api-fabric:1.0.0")
 }
 ```
     </div>

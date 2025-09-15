@@ -43,7 +43,7 @@ Choose the correct artifact for your platform: `core`, `paper`, `velocity`, `spi
       <pre><code class="language-xml">
 &lt;repository&gt;
     &lt;id&gt;norisk&lt;/id&gt;
-    &lt;url&gt;https://maven.norisk.gg/repository/maven-public/&lt;/url&gt;
+    &lt;url&gt;https://maven.norisk.gg/repository/maven-releases/&lt;/url&gt;
 &lt;/repository&gt;
 &lt;!-- Core (platform-agnostic) --&gt;
 &lt;dependency&gt;
@@ -87,7 +87,7 @@ Choose the correct artifact for your platform: `core`, `paper`, `velocity`, `spi
       <pre><code class="language-groovy">
 repositories {
     maven {
-        url = uri("https://repo.norisk.gg/repository/maven-public/")
+        url = uri("https://maven.norisk.gg/repository/maven-releases/")
     }
 }
 dependencies {
@@ -109,7 +109,7 @@ dependencies {
     <div class="code-tab-panel" data-tab="gradle-kts">
       <pre><code class="language-kotlin">
 repositories {
-    maven("https://repo.norisk.gg/repository/maven-public/")
+    maven("https://maven.norisk.gg/repository/maven-releases/")
 }
 dependencies {
     // Core (platform-agnostic)
