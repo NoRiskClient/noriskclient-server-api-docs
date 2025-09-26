@@ -29,7 +29,7 @@ To use the NoRiskClient API, you need to add it as a dependency to your project.
 
 ## Dependency Information
 
-Add the following dependency to your project, replacing `VERSION` with the latest release (e.g., `0.1.0`).  
+Add the following dependency to your project, replacing `VERSION` with the latest release (e.g., `0.1.1`).  
 Choose the correct artifact for your platform: `core`, `paper`, `velocity`, `spigot`, `bungeecord`, or `fabric`.
 
 <div class="code-tab-wrapper">
@@ -130,7 +130,7 @@ dependencies {
   </div>
 </div>
 
-> **Note:** Replace `VERSION` with the latest release, e.g. `0.1.0`.
+> **Note:** Replace `VERSION` with the latest release, e.g. `0.1.1`.
 
 > **Find the latest version:**  
 > Browse available versions of `nrc-server-api-core` here:  
